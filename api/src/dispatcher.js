@@ -16,6 +16,7 @@ function Routes(app) {
     });
 
     app.get('/', commonCall('index', 'home'));
+    app.get('/articles', commonCall('getAll', 'articles'));
 
     function commonCall(method, ctrlName) {
         return function(req, res) {
