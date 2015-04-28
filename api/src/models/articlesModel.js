@@ -7,7 +7,10 @@ function getArticlesModel() {
     var articleSchema = mongoose.Schema({
         headline: String,
         full: String,
-        date: Date,
+        date: {
+            type: Date,
+            default: Date.now
+        },
         channel: String,
         status: String
     }, {

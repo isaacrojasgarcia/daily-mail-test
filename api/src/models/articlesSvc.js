@@ -23,3 +23,10 @@ ArticlesSvc.prototype.getOne = function(id) {
     }, utils.handlingResponse(deferred, 'ERROR getting articles ' + id));
     return deferred.promise;
 };
+
+ArticlesSvc.prototype.create = function(data) {
+    var deferred = Q.defer();
+    var article = new ArticlesModel(data);
+    article.save(utils.handlingResponse(deferred, 'ERROR saving article'));
+    return deferred.promise;
+};
