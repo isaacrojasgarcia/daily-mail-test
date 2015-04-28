@@ -19,7 +19,8 @@ function Routes(app) {
     app.get('/articles', commonCall('getAll', 'articles'));
     app.get('/articles/:id', commonCall('getOne', 'articles'));
 
-    app.put('/articles', commonCall('create', 'articles'));
+    app.put('/articles', commonCall('save', 'articles'));
+    app.post('/articles/:id', commonCall('save', 'articles'));
     app.delete('/articles/:id', commonCall('delete', 'articles'));
 
     function commonCall(method, ctrlName) {

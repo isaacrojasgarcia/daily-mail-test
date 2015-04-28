@@ -23,8 +23,8 @@ ArticlesCtrl.prototype.delete = function(req, res) {
     });
 };
 
-ArticlesCtrl.prototype.create = function(req, res) {
-    articlesSvc.create(req.body).then(function(response) {
+ArticlesCtrl.prototype.save = function(req, res) {
+    articlesSvc.save(req.body, req.params.id).then(function(response) {
         res.json(response);
     });
 };

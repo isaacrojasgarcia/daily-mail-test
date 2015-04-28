@@ -24,10 +24,19 @@ ArticlesSvc.prototype.getOne = function(id) {
     return deferred.promise;
 };
 
-ArticlesSvc.prototype.create = function(data) {
+ArticlesSvc.prototype.save = function(data, id) {
     var deferred = Q.defer();
-    var article = new ArticlesModel(data);
-    article.save(utils.handlingResponse(deferred, 'ERROR saving article'));
+    if(!id) {
+        var article = new ArticlesModel(data);
+        article.save(utils.handlingResponse(deferred, 'ERROR saving article'));
+    }
+    else {
+        ArticlesModel.findByIdAndUpdate({
+            _id: id
+        }, {
+            $set: data
+        }, utils.handlingResponse(deferred, 'ERROR updating article'));
+    }
     return deferred.promise;
 };
 
