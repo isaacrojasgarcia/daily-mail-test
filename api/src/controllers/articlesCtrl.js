@@ -14,6 +14,12 @@ ArticlesCtrl.prototype.getOne = function(req, res) {
     });
 };
 
+ArticlesCtrl.prototype.delete = function(req, res) {
+    articlesSvc.delete(req.params.id).then(function(response) {
+        res.json(response);
+    });
+};
+
 ArticlesCtrl.prototype.create = function(req, res) {
     articlesSvc.create(req.body).then(function(response) {
         res.json(response);

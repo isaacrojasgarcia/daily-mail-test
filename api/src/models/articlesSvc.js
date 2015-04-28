@@ -30,3 +30,10 @@ ArticlesSvc.prototype.create = function(data) {
     article.save(utils.handlingResponse(deferred, 'ERROR saving article'));
     return deferred.promise;
 };
+
+ArticlesSvc.prototype.delete = function(id) {
+    var deferred = Q.defer();
+    ArticlesModel.find({_id: id}, utils.handlingResponse(deferred, 'ERROR getting all articles'))
+        .remove(utils.handlingResponse(deferred, 'ERROR removing article' + id));
+    return deferred.promise;
+};
