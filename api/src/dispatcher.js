@@ -18,6 +18,7 @@ function Routes(app) {
     app.get('/', commonCall('index', 'home'));
     app.get('/articles', commonCall('getAll', 'articles'));
     app.get('/articles/:id', commonCall('getOne', 'articles'));
+    app.get('/channel/:channel/articles', commonCall('getByChannel', 'articles'));
 
     app.put('/articles', commonCall('save', 'articles'));
     app.post('/articles/:id', commonCall('save', 'articles'));

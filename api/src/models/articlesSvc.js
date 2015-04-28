@@ -24,6 +24,14 @@ ArticlesSvc.prototype.getOne = function(id) {
     return deferred.promise;
 };
 
+ArticlesSvc.prototype.getByChannel = function(channel) {
+    var deferred = Q.defer();
+    ArticlesModel.find({
+        channel: channel
+    }, utils.handlingResponse(deferred, 'ERROR getting articles by channel ' + channel));
+    return deferred.promise;
+};
+
 ArticlesSvc.prototype.save = function(data, id) {
     var deferred = Q.defer();
     if(!id) {
