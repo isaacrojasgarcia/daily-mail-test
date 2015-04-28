@@ -40,3 +40,12 @@ $ curl -i -H "Accept: application/json" -X DELETE http://localhost:3100/articles
 ```
 
 ## Performance considerations
+* **Concurrent Writting**
+In the current example Mongoose follows *last change will win*, so the last change will be reflected
+MongoDB uses the [WiredTiger](http://www.wiredtiger.com/) approach to optimize the concurrency control
+A proper solution would be creating a queue
+
+* **Caching querys**
+There are many ways to cache queries.
+For the current test the easiest solution would be to use a npm package like [`mongooe-cache`](https://www.npmjs.com/package/mongoose-cache)
+Using `redis` would be another good solution
