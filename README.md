@@ -49,3 +49,13 @@ A proper solution would be creating a queue
 There are many ways to cache queries.
 For the current test the easiest solution would be to use a npm package like [`mongooe-cache`](https://www.npmjs.com/package/mongoose-cache).
 Using `redis` would be another good solution
+
+
+## Updates
+
+**Apr 28th 18.30 CET**
+* Added live preview [here](http://dailymail.devadictos.com/articles)
+* Updated usage
+```
+$ curl -v -H "Content-Type: application/json" -X PUT -d '{"headline":"whoa", "full":"ops", "channel":"mychannel", "status":"true"}' http://dailymail.devadictos.com/articles
+```
