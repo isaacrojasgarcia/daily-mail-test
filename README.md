@@ -1,4 +1,5 @@
 # Articles for MailOnline test
+A RESTful API based on MEAN stack 
 
 ## Assumptions
 * [nodejs](https://nodejs.org/), [npm](https://www.npmjs.com/) and [gulpjs](http://gulpjs.com/) already installed
