@@ -1,0 +1,29 @@
+{
+  "name": "test-api",
+  "version": "0.1.0",
+  "description": "Articles test api",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/trepafi/articles.git"
+  },
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "build": "browserify . -s SHPOC -o dist/poc.js -t debowerify && du -h dist/poc.js",
+    "dev": "gulp"
+  },
+  "dependencies": {
+    "body-parser": "^1.12.2",
+    "connect-livereload": "^0.5.2",
+    "express": "^4.11.1",
+    "gulp": "^3.8.10",
+    "gulp-load-plugins": "^0.8.0",
+    "gulp-nodemon": "^1.0.5",
+    "lodash": "^2.4.1",
+    "moment": "^2.9.0",
+    "mongoose": "3.9.7",
+    "multer": "^0.1.8",
+    "q": "^1.1.2",
+    "request": "^2.55.0"
+  }
+}
