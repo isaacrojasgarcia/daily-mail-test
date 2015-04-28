@@ -16,7 +16,10 @@ ArticlesCtrl.prototype.getOne = function(req, res) {
 
 ArticlesCtrl.prototype.delete = function(req, res) {
     articlesSvc.delete(req.params.id).then(function(response) {
-        res.json(response);
+        res.json({
+            success: response ? true : false,
+            result: response
+        });
     });
 };
 
